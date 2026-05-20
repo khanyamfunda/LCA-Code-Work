@@ -1,0 +1,334 @@
+*, *::before, *::a
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ─────────────────────────────────────────────
+   3. HEADER
+───────────────────────────────────────────── */
+.site-header {
+  padding: 56px 40px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--text-primary);
+  line-height: 1;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 6px;
+}
+
+.tagline {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+
+/* ─────────────────────────────────────────────
+   4. FILTER BAR — FLEXBOX
+───────────────────────────────────────────── */
+.filter-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 36px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.filter-btn {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    color        var(--transition),
+    border-color var(--transition),
+    background   var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+}
+
+.filter-btn.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.filter-btn.active::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+
+/* ─────────────────────────────────────────────
+   5. GALLERY GRID — CSS GRID (main layout)
+   Desktop: 4 columns
+───────────────────────────────────────────── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+
+/* ─────────────────────────────────────────────
+   6. CARD — CSS GRID (card layout)
+───────────────────────────────────────────── */
+.card {
+  display: grid;
+  grid-template-rows: 240px auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    opacity    var(--transition),
+    transform  var(--transition),
+    visibility var(--transition);
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+
+/* ─────────────────────────────────────────────
+   7. CARD IMAGE WRAP & OVERLAY
+───────────────────────────────────────────── */
+.card-image-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.card:hover .card-image-wrap img {
+  transform: scale(1.06);
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-image-wrap img {
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.0) 0%,
+    rgba(0,0,0,0.75) 60%,
+    rgba(13,13,13,0.98) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-desc {
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: rgba(240, 236, 227, 0.88);
+  font-style: italic;
+}
+
+.card-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  transition: color var(--transition);
+}
+
+.card:hover .card-title {
+  color: var(--accent);
+}
+
+
+/* ─────────────────────────────────────────────
+   8. CATEGORY TAGS
+───────────────────────────────────────────── */
+.card-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 2px;
+  width: fit-content;
+}
+
+.card-tag.landscape {
+  background: var(--tag-landscape);
+  color:      var(--tag-landscape-fg);
+}
+
+.card-tag.portrait {
+  background: var(--tag-portrait);
+  color:      var(--tag-portrait-fg);
+}
+
+.card-tag.architecture {
+  background: var(--tag-architecture);
+  color:      var(--tag-architecture-fg);
+}
+
+
+/* ─────────────────────────────────────────────
+   9 & 10. FILTER ANIMATION
+───────────────────────────────────────────── */
+.card.hidden {
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  border-width: 0;
+  margin: 0;
+}
+
+.card:not(.hidden) {
+  max-height: 1000px;
+  transition:
+    opacity    var(--transition),
+    transform  var(--transition),
+    max-height 0.4s ease,
+    border-color var(--transition);
+}
+
+
+/* ─────────────────────────────────────────────
+   11. RESPONSIVE BREAKPOINTS
+───────────────────────────────────────────── */
+
+/* TABLET: 2 columns */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-header,
+  .filter-bar,
+  .gallery-grid {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* MOBILE: 1 column */
+@media (max-width: 520px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header,
+  .filter-bar,
+  .gallery-grid {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .filter-bar {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 18px;
+    font-size: 0.7rem;
+  }
+
+  .card {
+    grid-template-rows: 260px auto;
+  }
+}
+Make sure style.css is in the same folder as gallery.html, and that's it — open gallery.html in your browser and everything should work.
+        .cc-install-nudge { container-type: inline-size; }
+        @keyframes ccInstallNudgeIn {
+          from { opacity: 0; transform: translateY(8px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @container (max-width: 450px) {
+          .cc-install-nudge-icon { display: none; }
+        }
+      Claude works directly with your codebaseLet Claude edit files, run commands, and ship changes from the desktop app, your terminal, or your IDE.InstallSonnet 4.6Claude is AI and can make mistakes. Please double-check responses.

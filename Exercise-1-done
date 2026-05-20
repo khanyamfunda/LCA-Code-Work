@@ -1,0 +1,14 @@
+name = input("Please enter your name")
+age = input("age")
+print(f"Hi {name}, i see that you are {age} years old.")
+#QUESTION 2
+length = int(input("State the length of the rectangle"))
+width = int(input("state the width of the rectangle"))
+area = (length*width)
+print(area)
+#QUESTION 3
+temperature_celsius = float(input("Enter temperature in celsius:"))
+print(type(temperature_celsius))
+temperature_fahrenheit =((temperature_celsius*9/5) + 32)
+round(temperature_fahrenheit)
+print(temperature_fahrenheit)

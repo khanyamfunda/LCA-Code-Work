@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE COLLECTOR'S DEN</title>
+  <link rel="stylesheet" hrref="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  <style>
+    body { font-family: 'Jost', sans-serif; background: #345683; color: #e8e0d5; }
+    h1,h2,h3,h4,h5 { font-family: 'Cormorant Garamond', serif; }
+    .navbar { background: #a4a2a2 !important; border-bottom: 1px solid #2a2a2a; }
+    .navbar-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 6px; color: #c9a96e !important; }
+    .nav-link { color: #b0a090 !important; letter-spacing: 2px; font-size: 0.78rem; text-transform: uppercase; transition: color 0.3s; }
+    .nav-link:hover, .nav-link.active { color: #c9a96e !important; }
+    .hero { min-height: 92vh; background: linear-gradient(135deg, #0d0d0d 0%, #1a1510 60%, #0d0d0d 100%); display: flex; align-items: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(201,169,110,0.08) 0%, transparent 70%); }
+    .hero-eyebrow { letter-spacing: 6px; font-size: 0.72rem; text-transform: uppercase; color: #c9a96e; }
+    .hero-title { font-size: clamp(3.5rem, 8vw, 7rem); line-height: 1.0; color: #f0ece5; font-weight: 300; }
+    .hero-title span { color: #c9a96e; font-style: italic; }
+    .btn-gold { background: #c9a96e; color: #0d0d0d; border: none; letter-spacing: 3px; text-transform: uppercase; font-size: 0.72rem; font-family: 'Jost', sans-serif; padding: 14px 36px; border-radius: 0; transition: all 0.3s; }
+    .btn-gold:hover { background: #e0c080; color: #0d0d0d; }
+    .btn-outline-gold { border: 1px solid #c9a96e; color: #c9a96e; background: transparent; letter-spacing: 3px; text-transform: uppercase; font-size: 0.72rem; padding: 13px 36px; border-radius: 0; transition: all 0.3s; }
+    .btn-outline-gold:hover { background: #c9a96e; color: #0d0d0d; }
+    .section-label { letter-spacing: 5px; font-size: 0.7rem; text-transform: uppercase; color: #c9a96e; }
+    .section-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; color: #f0ece5; }
+    .carousel-inner img { height: 480px; object-fit: cover; filter: brightness(0.55); }
+    .carousel-caption h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; }
+    .carousel-caption p { letter-spacing: 2px; font-size: 0.8rem; }
+    .card { background: #827f7c; border: 1px solid #2a2420; border-radius: 0; transition: transform 0.3s, border-color 0.3s; }
+    .card:hover { transform: translateY(-6px); border-color: #c9a96e; }
+    .card-img-top { height: 220px; object-fit: cover; filter: brightness(0.85); }
+    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: #f0ece5; }
+    .card-text { color: #907860; font-size: 0.82rem; letter-spacing: 1px; }
+    .price { color: #c9a96e; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; }
+    .divider-gold { height: 1px; background: linear-gradient(90deg, transparent, #c9a96e, transparent); margin: 3rem 0; }
+    .alert-luxury { background: #181410; border: 1px solid #c9a96e; border-left: 4px solid #c9a96e; color: #c9a96e; border-radius: 0; letter-spacing: 1px; font-size: 0.85rem; }
+    .feature-icon { font-size: 2rem; color: #c9a96e; margin-bottom: 1rem; }
+    .feature-box { padding: 2.5rem; border: 1px solid #2a2420; transition: border-color 0.3s; }
+    .feature-box:hover { border-color: #c9a96e; }
+    footer { background: #080808; border-top: 1px solid #2a2a2a; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 2rem; letter-spacing: 6px; color: #c9a96e; }
+    .footer-link { color: #706050 !important; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; transition: color 0.3s; }
+    .footer-link:hover { color: #c9a96e !important; }
+    .badge-gold { background: #c9a96e; color: #0d0d0d; font-size: 0.65rem; letter-spacing: 2px; border-radius: 0; padding: 4px 10px; }
+    .marquee-strip { background: #c9a96e; color: #0d0d0d; font-size: 0.72rem; letter-spacing: 4px; text-transform: uppercase; padding: 10px 0; overflow: hidden; white-space: nowrap; }
+    .marquee-inner { display: inline-block; animation: marquee 20s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  </style>
+  
+</head>
+<body class="min-vh-100-flex">
+  <nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">THE COLLECTOR'S DEN</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span style="color:#373126; font-size:1.5rem;">☰</span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto gap-3">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+  <div class="marquee-strip">
+  <div class="marquee-inner">
+    &nbsp;&nbsp;&nbsp;FREE SHIPPING ON ORDERS OVER R1500 &nbsp;●&nbsp; NEW ARRIVALS EVERY FRIDAY &nbsp;●&nbsp; HANDCRAFTED WITH CARE &nbsp;●&nbsp; EXCLUSIVE MEMBERS DISCOUNT &nbsp;●&nbsp; FREE SHIPPING ON ORDERS OVER R1500 &nbsp;●&nbsp; NEW ARRIVALS EVERY FRIDAY &nbsp;●&nbsp; HANDCRAFTED WITH CARE &nbsp;●&nbsp; EXCLUSIVE MEMBERS DISCOUNT &nbsp;&nbsp;&nbsp;
+  </div>
+</div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 animate__animated animate__fadeInLeft">
+          <p class="hero-eyebrow mb-3">FRESHLY DROPPED COLLECTABLES- MAY 2026</p>
+          <h1 class="hero-title mb-4">
+            Timeless pieces<br>for the weird<br>& bizzare.
+          </h1>
+          <p class="text-secondary mb-5" style="max-width: 420px; line-height: 1.8; font-weight: 300;">Each piece is designed to express your inner aestethic</p>
+          <div class="d-flex gap-3 flex-wrap">
+          <a href="products.html" class="btn btn-gold">Shop Now</a>
+          <a href="about.html" class="btn btn-outline-gold">Our Story</a>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-flex justify-content-end animate__animated animate__fadeInRight">
+        <div style="width:380px; height:480px; border:1px solid #2a2420; position:relative; overflow:hidden; margin-top: 30px;">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=500&fit=crop" alt="Store" class="w-100 h-100" style="object-fit:cover; filter:brightness(0.7);" />
+          <div style="position:absolute; bottom:0; left:0; right:0; padding:2rem; background:linear-gradient(transparent,rgba(13,13,13,0.9));">
+            <span class="badge-gold">Featured</span>
+            <p class="mt-2 mb-0" style="font-family:'Cormorant Garamond',serif; font-size:1.4rem;">Autumn Edit 2025</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+</html>

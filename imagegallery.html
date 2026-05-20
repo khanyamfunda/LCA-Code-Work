@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="imagegallerystyle.css" />
+</head>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="logo">THE GALLERY</span>
+      <p class="tagline">A curated visual canvas</p>
+    </div>
+  </header>
+ 
+  <nav class="filter-bar" aria-label="Filter gallery by category">
+    <!-- data-filter="all" targets every card -->
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="landscape">Landscapes</button>
+    <button class="filter-btn" data-filter="portrait">Portraits</button>
+    <button class="filter-btn" data-filter="architecture">Architecture</button>
+  </nav>
+ 
+ 
+  <main class="gallery-grid" id="gallery">
+ 
+    
+    <article class="card" data-category="landscape">
+  
+      <div class="card-image-wrap">
+        <img
+          src="c:\Users\Admin\Downloads\Landscape 1.jpg"
+          alt="Mountain sunrise over misty peaks"
+          loading="lazy">
+        
+        <div class="card-overlay">
+          <p class="card-desc">A monumental bystander to love, bars so perfectly structured in unity that now they are a reference to how long structuter unity can last.</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Eifel Tower</h2>
+        <span class="card-tag landscape">Landscape</span>
+      </div>
+    </article>
+ 
+    <article class="card" data-category="portrait">
+      <div class="card-image-wrap">
+        <img
+          src="c:\Users\Admin\Downloads\Landscape 2.jpg"
+          alt="Close-up portrait with dramatic lighting"
+          loading="lazy"
+        />
+        <div class="card-overlay">
+          <p class="card-desc">Language and culture transcended into a city with luxury venues,a vibrant atmospshere and calm natural surroundings</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Milan, Italy</h2>
+        <span class="card-tag portrait">Portrait</span>
+      </div>
+    </article>
+ 
+    <article class="card" data-category="architecture">
+      <div class="card-image-wrap">
+        <img
+          src="c:\Users\Admin\Downloads\Landscape 4.jpg"
+          alt="Geometric modern building facade"
+          loading="lazy"
+        />
+        <div class="card-overlay">
+          <p class="card-desc">With nature's very own dinner table as the centre piece cape townis not only the pinnacle of RSA cities but also a global destination for the best getaways.</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Cape Town, RSA</h2>
+        <span class="card-tag architecture">Architecture</span>
+      </div>
+    </article>
+ 
+  
+    <article class="card" data-category="landscape">
+      <div class="card-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80"
+          alt="Vast green valley under dramatic sky"
+          loading="lazy"
+        />
+        <div class="card-overlay">
+          <p class="card-desc">Clouds chase shadows across a valley that has witnessed centuries pass in quiet solitude.</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Valley of Echoes</h2>
+        <span class="card-tag landscape">Landscape</span>
+      </div>
+    </article>
+ 
+    <article class="card" data-category="portrait">
+      <div class="card-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&q=80"
+          alt="Street portrait candid shot"
+          loading="lazy"
+        />
+        <div class="card-overlay">
+          <p class="card-desc">Caught between one moment and the next — a fleeting expression that says everything words cannot.</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Candid Soul</h2>
+        <span class="card-tag portrait">Portrait</span>
+      </div>
+    </article>
+ 
+    <article class="card" data-category="architecture">
+      <div class="card-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1555636222-cae831e670b3?w=600&q=80"
+          alt="Spiral staircase architectural detail"
+          loading="lazy"
+        />
+        <div class="card-overlay">
+          <p class="card-desc">Each spiral is a promise — that the path upward, however winding, always leads somewhere extraordinary.</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Infinite Turn</h2>
+        <span class="card-tag architecture">Architecture</span>
+      </div>
+    </article>
+ 
+    <article class="card" data-category="landscape">
+      <div class="card-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=600&q=80"
+          alt="Calm lake reflecting forest and sky"
+          loading="lazy"
+        />
+        <div class="card-overlay">
+          <p class="card-desc">Stillness so complete the lake becomes a mirror — and you can't tell which world is real.</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Mirror Lake</h2>
+        <span class="card-tag landscape">Landscape</span>
+      </div>
+    </article>
+ 
+   
+    <article class="card" data-category="portrait">
+      <div class="card-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&q=80"
+          alt="Woman gazing into distance golden hour"
+          loading="lazy"
+        />
+        <div class="card-overlay">
+          <p class="card-desc">Golden hour wraps around her like a quiet hymn — the world softens and she alone stays sharp.</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Golden Reverie</h2>
+        <span class="card-tag portrait">Portrait</span>
+      </div>
+    </article>
+ 
+    
+    <article class="card" data-category="architecture">
+      <div class="card-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80"
+          alt="City skyline at dusk"
+          loading="lazy"
+        />
+        <div class="card-overlay">
+          <p class="card-desc">As dusk bleeds into the city, ten thousand windows ignite — a constellation built by human hands.</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Dusk Metropolis</h2>
+        <span class="card-tag architecture">Architecture</span>
+      </div>
+    </article>
+ 
+    
+    <article class="card" data-category="landscape">
+      <div class="card-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&q=80"
+          alt="Desert dunes at sunset"
+          loading="lazy"
+        />
+        <div class="card-overlay">
+          <p class="card-desc">Silence carved into curves — the desert teaches patience with every ridge and hollow of its shifting skin.</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Dune Sermon</h2>
+        <span class="card-tag landscape">Landscape</span>
+      </div>
+    </article>
+ 
+    
+    <article class="card" data-category="portrait">
+      <div class="card-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80"
+          alt="Confident professional portrait"
+          loading="lazy"
+        />
+        <div class="card-overlay">
+          <p class="card-desc">Presence distilled to its purest form — composed, deliberate, and entirely unmistakable.</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Presence</h2>
+        <span class="card-tag portrait">Portrait</span>
+      </div>
+    </article>
+ 
+   
+    <article class="card" data-category="architecture">
+      <div class="card-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+          alt="Brutalist concrete architecture"
+          loading="lazy"
+        />
+        <div class="card-overlay">
+          <p class="card-desc">Raw, honest, unapologetic — brutalism asks you to reckon with structure itself, stripped of all disguise.</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Raw Form</h2>
+        <span class="card-tag architecture">Architecture</span>
+      </div>
+    </article>
+ 
+  </main>
+ 
+</body>
+</html>
